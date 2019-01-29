@@ -1,3 +1,4 @@
+import { HelperToolsProvider } from './../providers/helper-tools/helper-tools';
 import { Component } from '@angular/core';
 import { Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
@@ -8,10 +9,11 @@ import { HomePage } from '../pages/home/home';
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage: any = HomePage;
+  rootPage: any = 'HomePage';
 
-  constructor(public platform: Platform, private statusBar: StatusBar, private splashScreen: SplashScreen) {
-
+  constructor(public platform: Platform, private statusBar: StatusBar,
+    private splashScreen: SplashScreen, private helperTools: HelperToolsProvider) {
+    this.PlatformIsRead();
   }
   PlatformIsRead() {
     this.platform.ready().then(() => {
@@ -19,7 +21,9 @@ export class MyApp {
       // Here you can do any higher level native things you might need.
       this.statusBar.styleDefault();
       this.splashScreen.hide();
-
+      this.platform.registerBackButtonAction(() => {
+        this.helperTools.onRegisterBackButtonFunction();
+      }, 1);
     });
   }
 }

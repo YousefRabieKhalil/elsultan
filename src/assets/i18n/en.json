@@ -1,0 +1,8 @@
+{
+  "Error": "error",
+  "CannotResolveProccessPleaseTryAgin": "there is a problem when run this proccess please check you internet connection and try again later",
+  "done": "done",
+  "confirm": "confirm",
+  "DoYouWantToExit": "do you want to exit from this application ?",
+  "cancel": "cancel"
+}

@@ -1,7 +1,7 @@
-import { Camera } from '@ionic-native/camera/ngx';
+//import { Camera } from '@ionic-native/camera';
 import { Injectable } from '@angular/core';
 import 'rxjs/add/operator/map';
-import { ToastController, LoadingController, Loading, AlertController, ActionSheetController, App, MenuController } from 'ionic-angular';
+import { ToastController, LoadingController, Loading, AlertController, ActionSheetController, App, MenuController, Platform } from 'ionic-angular';
 // import { SharedClass } from '../sharedClass';
 import { TranslateService } from '@ngx-translate/core';
 // import { Geolocation } from '@ionic-native/geolocation';
@@ -25,14 +25,15 @@ export class HelperToolsProvider {
     private loadingCtrl: LoadingController,
     private alertCtrl: AlertController,
     //private launchNavigator: LaunchNavigator,
-    private camera: Camera,
+    //private camera: Camera,
     private translate: TranslateService,
-    private geolocation: Geolocation,
+    //private geolocation: Geolocation,
     private storage: Storage,
     //private geocoder: NativeGeocoder,
     private actionsheetCtrl: ActionSheetController,
     private app: App,
-    private menuController: MenuController
+    private menuController: MenuController,
+    private platform : Platform
   ) {
     console.log('Hello HellperToolsProvider Provider');
   }
@@ -128,7 +129,7 @@ export class HelperToolsProvider {
         let alert = this.alertCtrl.create({
           title: res[title],
           subTitle: res[message],
-          buttons: [res['Done']]
+          buttons: [res['done']]
         });
         alert.present().then(__ => {
           resolve(__)
@@ -140,75 +141,75 @@ export class HelperToolsProvider {
   }
   // End alert Functions
   ///////////////////////////////////////////////////
-  CameraLoadPhoto() {
-    const options = {
-      quality: 75,
-      destinationType: this.camera.DestinationType.DATA_URL,
-      //maximumImagesCount: 4,
-      sourceType: this.camera.PictureSourceType.CAMERA,
-      // sourceType: Camera.PictureSourceType.PHOTOLIBRARY,
-      allowEdit: true,
-      encodingType: this.camera.EncodingType.JPEG,
-      targetWidth: 300,
-      targetHeight: 300,
-    };
-    return this.camera.getPicture(options);
-  }
-  // Load Photo from Gallery
-  GalleryLoadPhoto() {
-    const options = {
-      quality: 75,
-      destinationType: this.camera.DestinationType.DATA_URL,
-      //maximumImagesCount: 4,
-      //sourceType: this.camera.PictureSourceType.CAMERA,
-      sourceType: this.camera.PictureSourceType.PHOTOLIBRARY,
-      allowEdit: true,
-      encodingType: this.camera.EncodingType.JPEG,
-      targetWidth: 300,
-      targetHeight: 300,
-    };
-    return this.camera.getPicture(options);
-  }
-  OpenImage() {
-    return new Promise((resolve, reject) => {
-      let actionsheet = this.actionsheetCtrl.create({
-        title: 'تحميل صورة',
-        buttons: [
-          {
-            text: 'Pictures',
-            icon: 'images',
-            handler: () => {
-              this.GalleryLoadPhoto().then(DataURI => {
-                resolve(DataURI);
-              }).catch(err => {
-                reject(err)
-              });
-            }
-          },
-          {
-            text: 'Camera',
-            icon: 'camera',
-            handler: () => {
-              this.CameraLoadPhoto().then(URI => {
-                resolve(URI);
-              }).catch(err => {
-                reject(err);
-              })
-            }
-          },
-          {
-            text: 'الغاء',
-            role: 'cancel',
-            handler: () => {
-              reject('cancel');
-            }
-          }
-        ]
-      });
-      actionsheet.present();
-    })
+  // CameraLoadPhoto() {
+  //   const options = {
+  //     quality: 75,
+  //     destinationType: this.camera.DestinationType.DATA_URL,
+  //     //maximumImagesCount: 4,
+  //     sourceType: this.camera.PictureSourceType.CAMERA,
+  //     // sourceType: Camera.PictureSourceType.PHOTOLIBRARY,
+  //     allowEdit: true,
+  //     encodingType: this.camera.EncodingType.JPEG,
+  //     targetWidth: 300,
+  //     targetHeight: 300,
+  //   };
+  //   return this.camera.getPicture(options);
+  // }
+  // // Load Photo from Gallery
+  // GalleryLoadPhoto() {
+  //   const options = {
+  //     quality: 75,
+  //     destinationType: this.camera.DestinationType.DATA_URL,
+  //     //maximumImagesCount: 4,
+  //     //sourceType: this.camera.PictureSourceType.CAMERA,
+  //     sourceType: this.camera.PictureSourceType.PHOTOLIBRARY,
+  //     allowEdit: true,
+  //     encodingType: this.camera.EncodingType.JPEG,
+  //     targetWidth: 300,
+  //     targetHeight: 300,
+  //   };
+  //   return this.camera.getPicture(options);
+  // }
+  // OpenImage() {
+  //   return new Promise((resolve, reject) => {
+  //     let actionsheet = this.actionsheetCtrl.create({
+  //       title: 'تحميل صورة',
+  //       buttons: [
+  //         {
+  //           text: 'Pictures',
+  //           icon: 'images',
+  //           handler: () => {
+  //             this.GalleryLoadPhoto().then(DataURI => {
+  //               resolve(DataURI);
+  //             }).catch(err => {
+  //               reject(err)
+  //             });
+  //           }
+  //         },
+  //         {
+  //           text: 'Camera',
+  //           icon: 'camera',
+  //           handler: () => {
+  //             this.CameraLoadPhoto().then(URI => {
+  //               resolve(URI);
+  //             }).catch(err => {
+  //               reject(err);
+  //             })
+  //           }
+  //         },
+  //         {
+  //           text: 'الغاء',
+  //           role: 'cancel',
+  //           handler: () => {
+  //             reject('cancel');
+  //           }
+  //         }
+  //       ]
+  //     });
+  //     actionsheet.present();
+  //   })
 
-  }
+  // }
   ///////////////////////
   GetTimeTrip(Origin, Destination) {
     return new Promise((resolve, reject) => {
@@ -337,7 +338,11 @@ export class HelperToolsProvider {
       this.menuController.close()
     }
     else if (this.app.getActiveNavs()[0] && this.app.getActiveNavs()[0].getActive().index == 0) {
-      this.ShowExitAlert();
+      this.ShowExitAlert().then(__ => {
+        this.platform.exitApp();
+      }).catch(__ => {
+
+      });
     } else {
       let nav = this.app.getActiveNavs()[0];
       let view = nav.getActive().instance.pageName;
