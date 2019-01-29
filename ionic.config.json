@@ -1,5 +1,7 @@
 {
   "name": "defualt-ionic-3-app",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "ionic-angular"
 }

@@ -14,3 +14,229 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+
+@font-face {
+  font-family: 'mybasefont';
+  src: url('../assets/fonts/Sukar Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  text-align: right !important;
+  font-size: 20px !important;
+}
+
+
+.content {
+  font-family: 'mybasefont';
+  color: grey !important;
+}
+
+.toolbar-md {
+  padding: 0px !important;
+}
+
+ion-icon {
+  &[class*="appname-"] {
+    // Instead of using the font-based icons
+    // We're applying SVG masks
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    background: currentColor;
+  }
+
+  // custom icons
+  &[class*="appname-filter"] {
+    mask-image: url(../assets/icon/filter.svg);
+    color: grey;
+    width: 20px;
+    height: 20px;
+  }
+
+  &[class*="appname-login"] {
+    mask-image: url(../assets/icon/login.svg);
+    color: color($colors, primary, base);
+  }
+
+  &[class*="appname-signup"] {
+    mask-image: url(../assets/icon/signup.svg);
+    color: color($colors, primary, base);
+  }
+
+  &[class*="appname-call"] {
+    mask-image: url(../assets/icon/call.svg);
+    color: color($colors, primary, base);
+  }
+
+  &[class*="appname-about"] {
+    mask-image: url(../assets/icon/about.svg);
+    color: color($colors, primary, base);
+  }
+
+  &[class*="appname-home"] {
+    mask-image: url(../assets/icon/home.svg);
+    color: color($colors, primary, base);
+  }
+}
+
+.loading-md .loading-wrapper {
+  background: transparent;
+  box-shadow: none;
+}
+
+.loading-ios .loading-wrapper {
+  background: transparent;
+  box-shadow: none;
+}
+
+.action-sheet-container {
+  height: 60%;
+  margin-top: 50%;
+  border-radius: 10px;
+  font-weight: bold;
+  font-family: 'mybasefont';
+
+}
+
+.action-sheet-wrapper {
+  width: 60% !important;
+  margin-left: 20% !important;
+  margin-right: 20% !important;
+  //transform: translateY(-30%) !important;
+}
+
+.action-sheet-group {
+  border-radius: 10px;
+  border: 2px solid color($colors, third, base);
+  font-weight: bold;
+}
+
+.action-sheet-group .action-sheet-button {
+  text-align: center;
+}
+
+.action-sheet-group .action-sheet-button span {
+  display: block;
+  text-align: center;
+}
+
+.action-sheet-group .action-sheet-icon {
+  text-align: center;
+  color: color($colors, primary, base) !important;
+}
+
+.action-sheet-group .action-sheet-title {
+  text-align: center;
+  border-bottom: 1px solid color($colors, third, base);
+  color: color($colors, primary, base) !important;
+  padding: 10px !important;
+}
+
+.action-sheet-group .button-inner {
+  margin-top: 5px;
+  justify-content: center !important;
+  color: color($colors, primary, base);
+  text-align: center;
+}
+
+.action-sheet-group-cancel .action-sheet-button {
+  font-size: 20px;
+  font-weight: bold;
+  height: 35px;
+  padding-top: 6px;
+}
+
+.action-sheet-group:last-child {
+  margin-top: 5px !important;
+  height: 35px;
+}
+
+
+.alert-md .alert-wrapper {
+  border-radius: 10px !important;
+  border: 1.5px solid color($colors, third, base);
+  box-shadow: 0px 0px 2px 2px #a0a0a0 !important;
+
+}
+
+.alert-md .alert-title {
+  font-weight: bold;
+  color: color($colors, primary, base);
+}
+
+.alert-md .alert-sub-title {
+  font-weight: bold;
+  color: color($colors, primary, base);
+}
+
+.alert-md .alert-button .button-inner {
+  font-weight: bold;
+  color: color($colors, primary, base);
+}
+
+.logo {
+  width: 200px;
+  height: 200px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 30px;
+  margin-bottom: 10px;
+}
+
+.inline {
+  display: inline-block;
+  color: color($colors, third, base) !important;
+}
+
+.ion-item {
+  padding-left: 40% !important;
+  font-weight: bold !important;
+  font-size: 30px !important;
+}
+
+.button {
+  box-shadow: none !important;
+}
+
+
+.list-md .item[no-lines],
+.list-md .item[no-lines] .item-inner {
+  font-weight: bold !important;
+  margin-right: 10px !important;
+  margin-left: 10px !important;
+}
+
+hr {
+  width: 85%;
+  height: 0.1px;
+  border-radius: 20px;
+  border: 4px solid#D5823F;
+}
+
+.list-md {
+  margin-top: 10px;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.card-md {
+  box-shadow: none !important;
+}
+
+.arabicClass {
+  direction: rtl !important;
+  font-weight: bold;
+}
+
+.CopyRight {
+  background-color: color($colors, primary, base);
+  position: absolute;
+  bottom: -30% !important;
+  width: 100%;
+
+  p {
+    margin: 0px !important;
+    font-weight: bold;
+    text-align: center !important;
+    color: color($colors, third, base);
+  }
+}
