@@ -1,4 +1,4 @@
-import { Camera } from '@ionic-native/camera';
+import { Camera } from '@ionic-native/camera/ngx';
 import { Injectable } from '@angular/core';
 import 'rxjs/add/operator/map';
 import { ToastController, LoadingController, Loading, AlertController, ActionSheetController, App, MenuController } from 'ionic-angular';

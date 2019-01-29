@@ -105,7 +105,7 @@ ion-icon {
 
 .action-sheet-group {
   border-radius: 10px;
-  border: 2px solid color($colors, third, base);
+  border: 2px solid color($colors, secondary, base);
   font-weight: bold;
 }
 
@@ -125,7 +125,7 @@ ion-icon {
 
 .action-sheet-group .action-sheet-title {
   text-align: center;
-  border-bottom: 1px solid color($colors, third, base);
+  border-bottom: 1px solid color($colors, secondary, base);
   color: color($colors, primary, base) !important;
   padding: 10px !important;
 }
@@ -152,7 +152,7 @@ ion-icon {
 
 .alert-md .alert-wrapper {
   border-radius: 10px !important;
-  border: 1.5px solid color($colors, third, base);
+  border: 1.5px solid color($colors, secondary, base);
   box-shadow: 0px 0px 2px 2px #a0a0a0 !important;
 
 }
@@ -184,7 +184,7 @@ ion-icon {
 
 .inline {
   display: inline-block;
-  color: color($colors, third, base) !important;
+  color: color($colors, secondary, base) !important;
 }
 
 .ion-item {
@@ -237,6 +237,6 @@ hr {
     margin: 0px !important;
     font-weight: bold;
     text-align: center !important;
-    color: color($colors, third, base);
+    color: color($colors, secondary, base);
   }
 }
