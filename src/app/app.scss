@@ -50,6 +50,10 @@ ion-icon {
     width: 20px;
     height: 20px;
   }
+  //  the color of background of statusbar
+  .toolbar-background-md, .toolbar-background-ios,.toolbar-background-wp {
+    background-color: color($colors, light, base) !important;
+  }
 
   &[class*="appname-login"] {
     mask-image: url(../assets/icon/login.svg);
