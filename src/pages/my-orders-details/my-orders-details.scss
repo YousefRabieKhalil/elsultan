@@ -1,0 +1,205 @@
+page-my-orders-details {
+    .Header{
+        padding: 5px 5px 4px 0px !important;
+        img{
+            width: 50px !important;
+            height: 50px !important;
+            box-shadow: 0px 2px 15px -3px #a0a0a0 !important;
+        }
+    }
+    .toolbar-title{
+        padding: 0px 4px 0px 0px !important;
+        font-size: 19px !important;
+        color: white !important;
+    }
+    .PropBTN{
+        margin: 0px 5px 0px 5px !important;
+        font-size: 20px !important;
+        font-weight: bolder;
+    }
+    .PropBTNPerson{
+        width: 30px;
+        height: 30px;
+        border-radius: 50% !important;
+        border: 1px solid white !important;
+        margin: 0px 5px 0px 5px !important;
+    }
+    .back-button{
+        display: none !important;
+    }
+    ion-content{
+        background-image: url(../assets/imgs/img.png);
+        background-size: cover;
+        background-position: center;
+    }
+    ion-header{
+        box-shadow: 0px 2px 15px -3px #a0a0a0 !important;
+    }
+    .HeaderOrderDetails{
+        width: 95% !important;
+        border-radius: 10px !important;
+        border: 1px solid color($colors, Fourth, base) !important;
+        background-color: color($colors, BackDark, base) !important;
+        margin: 10px 2.5% 10px 2.5% !important;
+        padding: 8px 0px 8px 0px !important;
+        text-align: center !important;
+        box-shadow: 0px 2px 15px -3px #a0a0a0 !important;
+        span{
+            color: white !important;
+            font-size: 17px !important;
+            font-weight: bold;
+        }
+    }
+    .InputField{
+        border-bottom: 1px solid color($colors, BackDark, base) !important;
+        direction: rtl !important;
+        ion-col{
+            padding: 0px !important;
+            .item-inner, ion-select{
+                padding: 0px !important;
+                max-width: 100% !important;
+                font-size: 14px !important;
+                font-weight: bold;
+                color: color($colors, BackDark, base) !important;
+                .item-cover{
+                    display: none !important;
+                }
+            }
+            ion-item, .item-inner{
+                border-bottom: none !important;
+                direction: ltr !important;
+                padding: 0px 0px 0px 5px !important;
+                .select-icon-inner{
+                    color: transparent !important;
+                }
+            }
+        }
+        .PriceSpan{
+            padding-top: 10px !important;
+        }
+        span{
+            text-align: right !important;
+            font-size: 16px;
+            font-weight: bold;
+            padding-right: 5px !important;
+            color: color($colors, BackDark, base) !important;
+        }
+    }
+    .MassRow{
+        padding: 10px 0px 10px 10px !important;
+        .MassSpan{
+            padding-top: 13px !important;
+        }
+        .MassValue{
+            ion-item, .item-inner{
+                padding: 0px 0px 0px 16px !important;
+            }
+            padding: 0px !important;
+            text-align: center !important;
+        }
+        .MassCol{
+            border: 1px solid color($colors, primary, base) !important;
+            border-radius: 10px !important;
+            padding: 5px !important;
+            background-color: white;
+        }
+        .CutSpan{
+            padding-top: 8px !important;
+        }
+        .CutItem{
+            min-height: 25px !important;
+            ion-select{
+                padding-left: 35% !important;
+            }
+        }
+    }
+    .Minus{
+        width: 30px !important;
+        display: inline-block;
+        background-color: white;
+        text-align: center;
+        padding-top: 6px;
+        height: 30px;
+        vertical-align: top !important;
+        border-radius: 10px !important;
+        ion-icon{
+            font-size: 17px;
+            padding: 0px !important;
+            font-weight: bolder;
+            text-align: center;
+            color: white !important;
+        }
+    }.Result{
+        margin: 0px 5px 0px 5px !important;
+        padding: 6px 0px 0px 5px !important;
+        span{
+            color: color($colors, primary, base) !important;
+        }
+    }
+    .BTN{
+        background-color: color($colors, primary, base);
+        height: 30px;
+    }
+    .CenterPlusMinus{
+        .PriceSpan{
+            padding-top: 18px !important;
+        }
+        .Quantity{
+            text-align: center;
+            padding: 15px 0px 15px 0px !important;
+        }
+    }
+    ion-textarea{
+        direction: rtl;
+        width: 95%;
+        margin: 10px 2.5% 10px 2.5%;
+        padding: 20px 5px 0px 0px;
+        text-align: center;
+        background-color: white;
+        border: 1px solid color($colors, primary, base) !important;
+        color: color($colors, primary, base);
+        border-radius: 10px !important;
+        ::placeholder, .text-input{
+            margin: 0px !important;
+            font-size: 17px !important;
+            text-align: center;
+            width: 100% !important;
+            direction: rtl;
+            color: color($colors, BackDark, base) !important;
+        }
+    }
+    .RowButtons{
+        width: 95%;
+        margin: 10px 2.5% 10px 2.5% !important;
+        padding: 0px !important;
+        ion-col{
+            padding: 0px 5px 0px 5px !important;
+        }
+        .Cart{
+            background-color: color($colors, primary, base);
+            color: white;
+            font-size: 15px;
+            border-radius: 10px !important;
+            height: 45px;
+            font-weight: bolder;
+            box-shadow: 0px 2px 15px -3px #a0a0a0 !important;
+            padding: 0px !important;
+            ion-icon::before{
+                margin-right: 14px !important;
+                font-size: 20px;
+            }
+        }
+    }
+    .InputField{
+        .NmuberPrice{
+            width: 100% !important;
+            text-align: left !important;
+            float: left !important;
+            margin-left: 5px !important;
+        }
+    }
+    .select-text{
+        max-width: 100% !important;
+        min-width: 100% !important;
+    }
+}

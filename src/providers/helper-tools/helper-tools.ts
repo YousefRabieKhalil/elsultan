@@ -13,11 +13,11 @@ declare var google;
 
 @Injectable()
 export class HelperToolsProvider {
-
+  
   currentUserPosition = { lat: 0, lng: 0 };
   AllCountries;
   CurrentUserCountry = 'Egypt';
-  SelectedTab = 0;
+  SelectedTab = 2;
   public readonly ToastPosition = { Top: 'top', Middle: 'middle', Buttom: 'buttom' }
   private loading: Loading;
   constructor(
@@ -64,7 +64,7 @@ export class HelperToolsProvider {
       content: `
         <div class="custom-spinner-container">
           <div class="custom-spinner-box">
-            <img src="assets/imgs/loading-souq.svg" width="200" height="200">
+            <img src="assets/imgs/loading.svg" width="200" height="200">
           </div>
         </div>`,
     });
@@ -109,15 +109,11 @@ export class HelperToolsProvider {
   }
   ShowBadRequestErrorAlert() {
     return new Promise((resolve, reject) => {
-      this.translate.get(['Error', 'CannotResolveProccessPleaseTryAgin']).subscribe(_val => {
-        this.showAlertWithOkButton(_val['Error'], _val['CannotResolveProccessPleaseTryAgin']).then(__ => {
+        this.showAlertWithOkButton('خطأ', 'هناك خطأ عند تنفيذ العمليه برجاء التأكد من الاتصال بالانترنت واعاده المحاوله او الاتصال بالدعم').then(__ => {
           resolve(__);
         }).catch(err => {
           reject(err);
         })
-      }, err => {
-        reject(err);
-      })
     });
   }
   ShowPremesionDeniedAlret() {

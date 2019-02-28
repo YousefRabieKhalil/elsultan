@@ -1,0 +1,49 @@
+<ion-header no-border color="primary">
+
+  <ion-navbar color="primary">
+    <ion-buttons class="Header" end>
+      <img src="./assets/imgs/headerlogo.png">
+    </ion-buttons>
+    <ion-buttons left>
+      <button ion-button class="PropBTN" icon-only color="white" (click)="GoToChoosenPage('WayUsPage')">
+        <ion-icon name="ios-alert-outline"></ion-icon>
+      </button>
+      <button ion-button class="PropBTNPerson" icon-only color="white" (click)="GoToChoosenPage('ProfilePage')">
+          <ion-icon name="person"></ion-icon>
+        </button>
+    </ion-buttons>
+    <ion-title text-right>اتصل بنا</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content no-padding>
+  <img class="HeaderContent" src="./assets/imgs/headerlogo.png">
+  <h1>لاي استفسار يمكنكم التواصل معنا من خلال</h1>
+  <ion-row class="CallUs">
+    <ion-col col-2 (click)="CallNumber(ContentData.telephone)">
+      <ion-icon name="call"></ion-icon>
+    </ion-col>
+    <ion-col col-10>
+      <span>{{ ContentData?.telephone }}</span>
+    </ion-col>
+  </ion-row>
+
+  <ion-row class="CallUs">
+    <ion-col col-2 (click)="CallNumber(ContentData.phone)">
+      <ion-icon name="call"></ion-icon>
+    </ion-col>
+    <ion-col col-10>
+      <span>{{ ContentData?.phone }}</span>
+    </ion-col>
+  </ion-row>
+
+  <h1>حسابنا في تويتر والانستجرام والسناب شات</h1>
+
+  <div class="Acounts">
+    <img (click)="GoToOpenWindow(ContentData.twitter)" src="assets/imgs/twitter.png">
+    <img (click)="GoToOpenWindow(ContentData.inist)" src="assets/imgs/instagram.png">
+    <img (click)="GoToOpenWindow(ContentData.snap)" src="assets/imgs/snapchat.png">
+  </div>
+
+</ion-content>

@@ -1,0 +1,46 @@
+<ion-header no-border color="primary">
+
+  <ion-navbar color="primary">
+    <ion-buttons class="Header" end>
+      <img src="./assets/imgs/headerlogo.png">
+    </ion-buttons>
+    <ion-buttons left>
+      <button ion-button class="PropBTN" icon-only color="white" (click)="GoToChoosenPage('WayUsPage')">
+        <ion-icon name="ios-alert-outline"></ion-icon>
+      </button>
+      <button ion-button class="PropBTNPerson" icon-only color="white" (click)="GoToChoosenPage('ProfilePage')">
+        <ion-icon name="person"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title text-right>ذبائح الطائف</ion-title>
+  </ion-navbar>
+
+</ion-header>
+<ion-content no-padding>
+  <div class="HeaderOrderDetails">
+    <span>السلة الشرائية</span>
+  </div>
+
+  <div class="NotValues" *ngIf="!ShowItems">
+    <span>لا توجد عناصر في السلة</span>
+  </div>
+
+  <div *ngIf="ShowItems">
+    <ion-row class="Items" *ngFor="let Cart of Carts;let i = index">
+      <ion-col col-2 class="TrashIcon" (click)="DeleteItem(i)">
+        <ion-icon name="ios-trash-outline"></ion-icon>
+      </ion-col>
+      <ion-col col-10 class="Data">
+        <h1>{{ Cart?.name }}</h1>
+        <p>{{ Cart?.quent }}</p>
+        <p>{{ Cart?.totalprice }} ريال سعودي</p>
+      </ion-col>
+    </ion-row>
+    <div class="OrderBTN" (click)="OrderNow()">
+        <ion-icon name="logo-usd"></ion-icon>
+        <p>اطلب الان</p>
+      </div>
+  </div>
+
+
+</ion-content>

@@ -1,0 +1,46 @@
+<ion-header no-border color="primary">
+
+    <ion-navbar color="primary">
+      <ion-buttons class="Header" end>
+        <img src="./assets/imgs/headerlogo.png">
+      </ion-buttons>
+      <ion-buttons left>
+        <button ion-button class="PropBTN" icon-only color="white" (click)="GoToChoosenPage('WayUsPage')">
+          <ion-icon name="ios-alert-outline"></ion-icon>
+        </button>
+        <button ion-button class="PropBTNPerson" icon-only color="white" (click)="GoToChoosenPage('ProfilePage')">
+            <ion-icon name="person"></ion-icon>
+          </button>
+      </ion-buttons>
+      <ion-title text-right>ذبائح الطائف</ion-title>
+    </ion-navbar>
+  
+  </ion-header>
+
+<ion-content no-padding>
+  <button ion-button clear block full class="MapButton" (click)="OpenMap()">
+    <ion-icon name="pin" class="MapSpan"></ion-icon>
+    (تحديد موقعك (اختياري
+  </button>
+
+  <h1>تاريخ التوصيل</h1>
+
+  <button ion-button clear block full class="MapButton" (click)="OpenDate()">
+    <ion-icon name="calendar" class="MapSpan"></ion-icon>
+    حدد تاريخ الوصول
+  </button>
+
+  <h1>فترة التوصيل</h1>
+
+  <div class="RadioBTN" id="Selected1" (click)="AddClass1('من ٩ صباحا الى ١٢ ظهرا')">من ٩ صباحا الى ١٢ ظهرا</div>
+
+  <div class="RadioBTN" id="Selected2" (click)="AddClass2('من ١ ظهرا الى ٤ عصرا')">من ١ ظهرا الى ٤ عصرا</div>
+
+  <div class="RadioBTN" id="Selected3" (click)="AddClass3('من ٤ عصرا الى ١٠ مساءا')">من ٤ عصرا الى ١٠ مساءا</div>
+
+  <div class="OrderBTN" (click)="OrderNow()">
+    <ion-icon name="logo-usd"></ion-icon>
+    <p>اطلب الان</p>
+  </div>
+  
+</ion-content>

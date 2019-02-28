@@ -1,0 +1,153 @@
+<ion-header no-border color="primary">
+
+    <ion-navbar color="primary">
+      <ion-buttons class="Header" end>
+        <img src="./assets/imgs/headerlogo.png">
+      </ion-buttons>
+      <ion-buttons left>
+        <button ion-button class="PropBTN" icon-only color="white" (click)="GoToChoosenPage('WayUsPage')">
+          <ion-icon name="ios-alert-outline"></ion-icon>
+        </button>
+      </ion-buttons>
+      <ion-title text-right>ذبائح الطائف</ion-title>
+    </ion-navbar>
+  
+  </ion-header>
+<ion-content no-padding>
+  <img class="HeaderContent" src="./assets/imgs/headerlogo.png">
+  <ion-row class="Container">
+    <form [formGroup]="loginForm">
+      <ion-row>
+        <ion-col col-2>
+          <ion-icon name="person"></ion-icon>
+        </ion-col>
+        <ion-col col-10>
+          <ion-item class="ItemBlock">
+            <ion-input [formControl]="loginForm.controls['Fullname']" type="text" placeholder="الاسم بالكامل"
+              [(ngModel)]="UpdateData.name"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <div class="error-box"
+        *ngIf="loginForm.controls['Fullname'].hasError('required') && loginForm.controls['Fullname'].touched">
+        الاسم بالكامل مطلوب</div>
+      <div class="error-box"
+        *ngIf="loginForm.controls['Fullname'].hasError('maxlength') && loginForm.controls['Fullname'].touched">
+        الاسم بالكامل لا يجب ان يكون اكبر من ٥٠ حرف</div>
+      <div class="error-box"
+        *ngIf="loginForm.controls['Fullname'].hasError('minlength') && loginForm.controls['Fullname'].touched">
+        الاسم بالكامل لا يجب ان يكون اصغر من ٦ حروف</div>
+
+      <ion-row>
+        <ion-col col-2>
+          <ion-icon name="phone-portrait"></ion-icon>
+        </ion-col>
+        <ion-col col-10>
+          <ion-item class="ItemBlock">
+            <ion-input [formControl]="loginForm.controls['TelephoneNumber']" type="number" placeholder="رقم الجوال"
+              [(ngModel)]="UpdateData.telephone"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <div class="error-box"
+        *ngIf="loginForm.controls['TelephoneNumber'].hasError('required') && loginForm.controls['TelephoneNumber'].touched">
+        رقم الجوال مطلوب</div>
+      <div class="error-box"
+        *ngIf="loginForm.controls['TelephoneNumber'].hasError('maxlength') && loginForm.controls['TelephoneNumber'].touched">
+        رقم الجوال يجب ان يكون ١٠ رقم</div>
+      <div class="error-box"
+        *ngIf="loginForm.controls['TelephoneNumber'].hasError('minlength') && loginForm.controls['TelephoneNumber'].touched">
+        رقم الجوال يجب ان يكون ١٠ رقم</div>
+
+      <ion-row>
+        <ion-col col-2>
+          <ion-icon name="call"></ion-icon>
+        </ion-col>
+        <ion-col col-10>
+          <ion-item class="ItemBlock">
+            <ion-input [formControl]="loginForm.controls['phoneNumber']" type="number" placeholder="رقم الهاتف"
+              [(ngModel)]="UpdateData.phone"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <div class="error-box"
+        *ngIf="loginForm.controls['phoneNumber'].hasError('maxlength') && loginForm.controls['phoneNumber'].touched">
+        رقم الهاتف يجب ان يكون ١٠ رقم</div>
+      <div class="error-box"
+        *ngIf="loginForm.controls['phoneNumber'].hasError('minlength') && loginForm.controls['phoneNumber'].touched">
+        رقم الهاتف يجب ان يكون ١٠ رقم</div>
+
+      <ion-row>
+        <ion-col col-2>
+          <ion-icon name="lock"></ion-icon>
+        </ion-col>
+        <ion-col col-10>
+          <ion-item class="ItemBlock">
+            <ion-input [formControl]="loginForm.controls['passwordMain']" type="password" placeholder="كلمة المرور"
+              [(ngModel)]="UpdateData.oldpassword"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <div class="error-box"
+        *ngIf="loginForm.controls['passwordMain'].hasError('required') && loginForm.controls['passwordMain'].touched">
+        كلمة المرور مطلوبة
+      </div>
+      <div class="error-box"
+        *ngIf="loginForm.controls['passwordMain'].hasError('maxlength') && loginForm.controls['passwordMain'].touched">
+        كلمة المرور لا يجب ان تكون اكبر من ٢٥ حرف
+      </div>
+      <div class="error-box"
+        *ngIf="loginForm.controls['passwordMain'].hasError('minlength') && loginForm.controls['passwordMain'].touched">
+        كلمة المرور لا يجب ان تكون اصغر من ٦ حروف
+      </div>
+
+      <ion-row>
+        <ion-col col-2>
+          <ion-icon name="lock"></ion-icon>
+        </ion-col>
+        <ion-col col-10>
+          <ion-item class="ItemBlock">
+            <ion-input [formControl]="loginForm.controls['newpassword']" type="password" placeholder="كلمة المرور الجديدة"
+              [(ngModel)]="UpdateData.password"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <div class="error-box"
+        *ngIf="loginForm.controls['newpassword'].hasError('maxlength') && loginForm.controls['newpassword'].touched">
+        كلمة المرور الجديدة لا يجب ان تكون اكبر من ٢٥ حرف
+      </div>
+      <div class="error-box"
+        *ngIf="loginForm.controls['newpassword'].hasError('minlength') && loginForm.controls['newpassword'].touched">
+        كلمة المرور الجديدة لا يجب ان تكون اصغر من ٦ حروف
+      </div>
+
+    <ion-row>
+      <ion-col col-2>
+        <ion-icon name="lock"></ion-icon>
+      </ion-col>
+      <ion-col col-10>
+        <ion-item class="ItemBlock">
+          <ion-input [formControl]="loginForm.controls['Confirmnewpassword']" type="password" placeholder="تأكيد كلمة المرور الجديدة"
+            [(ngModel)]="UpdateData.Confirmpassword"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <div class="error-box"
+        *ngIf="loginForm.controls['Confirmnewpassword'].hasError('maxlength') && loginForm.controls['Confirmnewpassword'].touched">
+        تأكيد كلمة المرور الجديدة لا يجب ان تكون اكبر من ٢٥ حرف
+      </div>
+      <div class="error-box"
+        *ngIf="loginForm.controls['Confirmnewpassword'].hasError('minlength') && loginForm.controls['Confirmnewpassword'].touched">
+        تأكيد كلمة المرور الجديدة لا يجب ان تكون اصغر من ٦ حروف
+      </div>
+
+  </form>
+    <button ion-button clear block full class="LogInBTN" [disabled]="!loginForm.valid" (click)="UpdateFunc()">تعديل الملف الشخصي</button>
+  </ion-row>
+</ion-content>

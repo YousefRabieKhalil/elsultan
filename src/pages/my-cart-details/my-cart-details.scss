@@ -1,0 +1,105 @@
+page-my-cart-details {
+    .Header{
+        padding: 5px 5px 4px 0px !important;
+        img{
+            width: 50px !important;
+            height: 50px !important;
+            box-shadow: 0px 2px 15px -3px #a0a0a0 !important;
+        }
+    }
+    .toolbar-title{
+        padding: 0px 4px 0px 0px !important;
+        font-size: 19px !important;
+        color: white !important;
+    }
+    .PropBTN{
+        margin: 0px 5px 0px 5px !important;
+        font-size: 20px !important;
+        font-weight: bolder;
+    }
+    .PropBTNPerson{
+        width: 30px;
+        height: 30px;
+        border-radius: 50% !important;
+        border: 1px solid white !important;
+        margin: 0px 5px 0px 5px !important;
+    }
+    .back-button{
+        display: none !important;
+    }
+    ion-content{
+        background-image: url(../assets/imgs/img.png);
+        background-size: cover;
+        background-position: center;
+    }
+    ion-header{
+        box-shadow: 0px 2px 15px -3px #a0a0a0 !important;
+    }
+    .MapButton{
+        width: 95%;
+        margin: 20px 2.5% 20px 2.5% !important;
+        border-radius: 10px !important;
+        background-color: color($colors, primary, base);
+        color: white;
+        padding: 0px !important;
+        text-align: center !important;
+        font-size: 16px;
+        ion-icon{
+            font-size: 20px;
+            text-align: left !important;
+        }
+    }
+    h1{
+        text-align: right;
+        font-size: 17px;
+        font-weight: bold;
+        color: color($colors, BackDark, base);
+        margin: 0px 2.5% 0px 2.5% !important;
+        width: 95%;
+    }
+    .RadioBTN{
+        padding: 5px;
+        width: 95%;
+        border-radius: 10px !important;
+        margin: 20px 2.5% 20px 2.5% !important;
+        font-size: 16px;
+        text-align: center;
+        font-weight: bold;
+        color: white;
+    }
+    .Gray{
+        background-color: color($colors, BackDark, base);
+    }
+    .Green{
+        background-color: color($colors, secondary, base);
+    }
+    .MapSpan{
+        font-size: 20px;
+        text-align: left !important;
+        float: left;
+        color: white;
+        position: absolute;
+        left: 10px;
+    }
+    .OrderBTN{
+        width: 100% !important;
+        position: absolute;
+        bottom: 0px;
+        padding: 5px !important;
+        border-bottom: 1px solid color($colors, BackDark, base) !important;
+        text-align: center;
+        background-color: color($colors, primary, base);
+        ion-icon{
+            font-size: 21px;
+            font-weight: bold;
+            display: block;
+            color: white;
+        }
+        p{
+            font-size: 17px;
+            font-weight: bold;
+            color: white;
+            margin: 5px 0px 0px 0px !important;
+        }
+    }
+}

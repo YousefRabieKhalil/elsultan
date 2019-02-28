@@ -1,0 +1,23 @@
+<ion-header no-border color="primary">
+
+    <ion-navbar color="primary">
+      <ion-buttons class="Header" end>
+        <img src="./assets/imgs/headerlogo.png">
+      </ion-buttons>
+      <!-- <ion-buttons left>
+        <button ion-button class="PropBTN" icon-only color="white" (click)="GoToChoosenPage('WayUsPage')">
+          <ion-icon name="ios-alert-outline"></ion-icon>
+        </button>
+        <button ion-button class="PropBTNPerson" icon-only color="white" (click)="GoToChoosenPage('ProfilePage')">
+            <ion-icon name="person"></ion-icon>
+          </button>
+      </ion-buttons> -->
+      <ion-title text-right>ذبائح الطائف</ion-title>
+    </ion-navbar>
+  
+  </ion-header>
+
+<ion-content no-padding>
+  <h1>اختار مدينتك</h1>
+  <button ion-button clear full block class="Countries" *ngFor="let CountryCity of Countries" (click)="GoToHome(CountryCity)">{{ CountryCity?.gove }}</button>
+</ion-content>

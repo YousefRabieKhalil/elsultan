@@ -1,0 +1,40 @@
+<ion-header no-border color="primary">
+
+  <ion-navbar color="primary">
+    <ion-buttons class="Header" end>
+      <img src="./assets/imgs/headerlogo.png">
+    </ion-buttons>
+    <ion-buttons left>
+      <button ion-button class="PropBTN" icon-only color="white" (click)="GoToChoosenPage('WayUsPage')">
+        <ion-icon name="ios-alert-outline"></ion-icon>
+      </button>
+      <button ion-button class="PropBTNPerson" icon-only color="white" (click)="GoToChoosenPage('ProfilePage')">
+        <ion-icon name="person"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title text-right>ذبائح الطائف</ion-title>
+  </ion-navbar>
+
+</ion-header>
+<ion-content no-padding>
+  <ion-row class="Items HeaderContent">
+    <ion-col col-12 class="Data">
+      <p>تاريخ الوصول: {{ Products?.recive_date }}</p>
+      <p>وقت الوصول: {{ Products?.recivetime }}</p>
+      <p>اجمالي السعر: {{ Products?.totalprice }} ريال سعودي</p>
+      <p>عدد المنتجات: {{ Products?.number_proudct }}</p>
+    </ion-col>
+  </ion-row>
+
+  <ion-row class="Items" *ngFor="let ProductItem of Products['product']">
+    <ion-col col-2 class="TrashIcon" (click)="DeleteItem(ProductItem)">
+      <ion-icon name="ios-trash-outline"></ion-icon>
+    </ion-col>
+    <ion-col col-10 class="Data">
+      <p>{{ ProductItem?.name }}</p>
+      <p>الكمية: {{ ProductItem?.quent }}</p>
+      <h1>{{ ProductItem?.totalprice }} ريال سعودي</h1>
+    </ion-col>
+  </ion-row>
+
+</ion-content>

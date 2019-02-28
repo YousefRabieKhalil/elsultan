@@ -1,0 +1,78 @@
+page-about-us {
+    .Header{
+        padding: 5px 5px 4px 0px !important;
+        img{
+            width: 50px !important;
+            height: 50px !important;
+            box-shadow: 0px 2px 15px -3px #a0a0a0 !important;
+        }
+    }
+    .toolbar-title{
+        padding: 0px 4px 0px 0px !important;
+        font-size: 19px !important;
+        color: white !important;
+    }
+    .PropBTN{
+        margin: 0px 5px 0px 5px !important;
+        font-size: 20px !important;
+        font-weight: bolder;
+    }
+    .PropBTNPerson{
+        width: 30px;
+        height: 30px;
+        border-radius: 50% !important;
+        border: 1px solid white !important;
+        margin: 0px 5px 0px 5px !important;
+    }
+    ion-content{
+        text-align: center !important;
+        background-image: url(../assets/imgs/img.png);
+        background-size: cover;
+        background-position: center;
+    }
+    .HeaderContent{
+        border-radius: 10px !important;
+        width: 100px;
+        height: 100px;
+        margin: 15px 0px 5px 0px !important; 
+    }
+    h1{
+        font-size: 16px !important;
+        color: color($colors, BackDark, base);
+        font-weight: bold;
+        margin: 15px 0px 15px 0px !important;
+    }
+    .CallUs{
+        background-color: color($colors, primary, base);
+        padding: 0px !important;
+        width: 95%;
+        margin: 0px 2.5% 15px 2.5% !important;
+        border-radius: 10px !important;
+        ion-col{
+            padding: 10px !important;
+            text-align: center;
+            span{
+                color: white;
+                font-size: 18px !important;
+                font-weight: bold;
+            }
+            ion-icon{
+                color: white;
+                font-size: 25px;
+                font-weight: bold;
+                float: left;
+                text-align: left;
+            }
+        }
+    }
+    .Acounts{
+        text-align: center;
+        margin: 20px 0px 10px 0px !important;
+        img{
+            margin: 0px 8px 0px 8px !important;
+            display: inline-block !important;
+            width: 35px;
+            height: 35px;
+        }
+    }
+}

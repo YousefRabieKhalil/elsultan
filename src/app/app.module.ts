@@ -5,14 +5,16 @@ import { ErrorHandler, NgModule } from "@angular/core";
 import { IonicApp, IonicErrorHandler, IonicModule } from "ionic-angular";
 import { SplashScreen } from "@ionic-native/splash-screen";
 import { StatusBar } from "@ionic-native/status-bar";
-
 import { TranslateLoader, TranslateModule } from "@ngx-translate/core";
 import { TranslateHttpLoader } from "@ngx-translate/http-loader";
-
+import { CallNumber } from '@ionic-native/call-number';
 import { MyApp } from "./app.component";
 import { HttpClient, HttpClientModule } from "@angular/common/http";
 import { IonicStorageModule } from "@ionic/storage";
-
+import { ApiProvider } from '../providers/api/api';
+import { Geolocation } from '@ionic-native/geolocation';
+import { DatePicker } from '@ionic-native/date-picker';
+import { ProductConntrollerProvider } from '../providers/product-conntroller/product-conntroller';
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, "./assets/i18n/", ".json");
 }
@@ -35,9 +37,15 @@ export function createTranslateLoader(http: HttpClient) {
   entryComponents: [MyApp],
   providers: [
     StatusBar,
+    DatePicker,
     SplashScreen,
+    Geolocation,
+    CallNumber,
     HelperToolsProvider,
-    { provide: ErrorHandler, useClass: IonicErrorHandler }
+    { provide: ErrorHandler, useClass: IonicErrorHandler },
+    ApiProvider,
+    ProductConntrollerProvider,
+    ProductConntrollerProvider
   ]
 })
 export class AppModule {}

@@ -1,0 +1,12 @@
+page-tabs {
+    .tab-button, .tab-button-icon{
+        color: color($colors, Fourth, base) !important;
+        font-size: 27px !important;
+    }
+    .tab-button[aria-selected=true]{
+        ion-icon{
+            color: white !important;
+        }
+        color: white !important;
+    }
+}

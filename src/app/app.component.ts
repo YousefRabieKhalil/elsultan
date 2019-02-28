@@ -3,14 +3,14 @@ import { Component } from '@angular/core';
 import { Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { HomePage } from '../pages/home/home';
+import { TranslateService } from '@ngx-translate/core';
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage: any = 'HomePage';
+  rootPage: any = 'CountryPage';
 
-  constructor(public platform: Platform, private statusBar: StatusBar,
+  constructor(public platform: Platform, private statusBar: StatusBar,private translate: TranslateService,
     private splashScreen: SplashScreen, private helperTools: HelperToolsProvider) {
     this.PlatformIsRead();
   }
@@ -22,7 +22,7 @@ export class MyApp {
       // the options of status bar
       this.statusBar.overlaysWebView(false);
       // set the color of background status bar
-      this.statusBar.backgroundColorByHexString('#efecec');
+      this.statusBar.backgroundColorByHexString('#EC6831');
       // set the color of icons and text of status bar to dark
       this.statusBar.styleDefault();
       this.splashScreen.hide();
@@ -30,6 +30,11 @@ export class MyApp {
         this.helperTools.onRegisterBackButtonFunction();
       }, 1);
     });
+  }
+
+  initTranslate() {
+    this.translate.use('ar');
+    this.platform.setDir('rtl', true);
   }
 }
 

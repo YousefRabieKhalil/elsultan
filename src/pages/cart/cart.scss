@@ -1,0 +1,115 @@
+page-cart {
+    .Header{
+        padding: 5px 5px 4px 0px !important;
+        img{
+            width: 50px !important;
+            height: 50px !important;
+            box-shadow: 0px 2px 15px -3px #a0a0a0 !important;
+        }
+    }
+    .toolbar-title{
+        padding: 0px 4px 0px 0px !important;
+        font-size: 19px !important;
+        color: white !important;
+    }
+    .PropBTN{
+        margin: 0px 5px 0px 5px !important;
+        font-size: 20px !important;
+        font-weight: bolder;
+    }
+    .PropBTNPerson{
+        width: 30px;
+        height: 30px;
+        border-radius: 50% !important;
+        border: 1px solid white !important;
+        margin: 0px 5px 0px 5px !important;
+    }
+    ion-content{
+        text-align: center !important;
+        background-image: url(../assets/imgs/img.png);
+        background-size: cover;
+        background-position: center;
+    }
+    .HeaderOrderDetails{
+        width: 95% !important;
+        border-radius: 10px !important;
+        border: 1px solid color($colors, Fourth, base) !important;
+        background-color: color($colors, BackDark, base) !important;
+        margin: 20px 2.5% 20px 2.5% !important;
+        padding: 8px 0px 8px 0px !important;
+        text-align: center !important;
+        box-shadow: 0px 2px 15px -3px #a0a0a0 !important;
+        span{
+            color: white !important;
+            text-align: center !important;
+            font-size: 17px !important;
+            font-weight: bold;
+        }
+    }
+    .Items{
+        width: 95%;
+        margin: 0px 2.5% 20px 2.5% !important;
+        height: 80px;
+        border-radius: 10px !important;
+        background-color: white;
+        box-shadow: 0px 2px 15px -3px #a0a0a0 !important;
+        .TrashIcon{
+            text-align: center;
+            ion-icon{
+                margin-top: 20px !important;
+                font-size: 25px;
+                font-weight: bolder;
+                color: color($colors, BackDark, base);
+            }
+        }
+        .Data{
+            text-align: right;
+            h1, p{
+                width: 100%;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                font-size: 15px;
+                margin: 3px 0px 3px 0px !important;
+                color: color($colors, BackDark, base);
+            }
+            h1{
+                color: color($colors, primary, base) !important;
+            }
+        }
+    }
+    .NotValues{
+        width: 100%;
+        height: 100%;
+        position: relative;
+        span{
+            position: absolute;
+            left: 30%;
+            bottom: 50%;
+            color: color($colors, BackDark, base);
+            font-size: 17px;
+            font-weight: bolder;
+        }
+    }
+    .OrderBTN{
+        width: 100% !important;
+        position: absolute;
+        bottom: 0px;
+        padding: 5px !important;
+        border-bottom: 1px solid color($colors, BackDark, base) !important;
+        text-align: center;
+        background-color: color($colors, primary, base);
+        ion-icon{
+            font-size: 21px;
+            font-weight: bold;
+            display: block;
+            color: white;
+        }
+        p{
+            font-size: 17px;
+            font-weight: bold;
+            color: white;
+            margin: 5px 0px 0px 0px !important;
+        }
+    }
+}

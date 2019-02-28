@@ -1,0 +1,55 @@
+<ion-content no-padding>
+  <img class="HeaderContent" src="./assets/imgs/headerlogo.png">
+  <ion-row class="Container">
+    <form [formGroup]="loginForm">
+      <ion-row>
+        <ion-col col-2>
+          <ion-icon name="phone-portrait"></ion-icon>
+        </ion-col>
+        <ion-col col-10>
+          <ion-item class="ItemBlock">
+            <ion-input [formControl]="loginForm.controls['phone']" type="number" placeholder="رقم الجوال"
+              [(ngModel)]="LoginData.telephone"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <div class="error-box"
+        *ngIf="loginForm.controls['phone'].hasError('required') && loginForm.controls['phone'].touched">
+        رقم الجوال مطلوب</div>
+      <div class="error-box"
+        *ngIf="loginForm.controls['phone'].hasError('maxlength') && loginForm.controls['phone'].touched">
+        رقم الهاتف يجب ان يكون ١٠ رقم</div>
+      <div class="error-box"
+        *ngIf="loginForm.controls['phone'].hasError('minlength') && loginForm.controls['phone'].touched">
+        رقم الهاتف يجب ان يكون ١٠ رقم</div>
+
+      <ion-row>
+        <ion-col col-2>
+          <ion-icon name="lock"></ion-icon>
+        </ion-col>
+        <ion-col col-10>
+          <ion-item class="ItemBlock">
+            <ion-input [formControl]="loginForm.controls['password']" type="password" placeholder="كلمة المرور"
+              [(ngModel)]="LoginData.password"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <div class="error-box"
+        *ngIf="loginForm.controls['password'].hasError('required') && loginForm.controls['password'].touched">
+        كلمة المرور مطلوبة
+      </div>
+
+    </form>
+    <button ion-button clear block full [disabled]="!loginForm.valid" class="LogInBTN" (click)="LoInFunc()">تسجيل الدخول</button>
+  </ion-row>
+
+  <div class="Register">
+      <button ion-button clear block full class="RegisterationBtn">ليس لديك حساب بعد؟</button>
+
+      <button ion-button clear block full class="RegisterationBtn PrimaryBtn" (click)="GoToSignUp()">تسجيل جديد</button>
+    
+      <button ion-button clear block full class="RegisterationBtn" (click)="GoToDissmiss()">اغلاق</button>
+  </div>
+</ion-content>

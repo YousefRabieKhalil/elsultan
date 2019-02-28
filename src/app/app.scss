@@ -52,7 +52,7 @@ ion-icon {
   }
   //  the color of background of statusbar
   .toolbar-background-md, .toolbar-background-ios,.toolbar-background-wp {
-    background-color: color($colors, light, base) !important;
+    background-color: color($colors, Third, base) !important;
   }
 
   &[class*="appname-login"] {
@@ -243,4 +243,12 @@ hr {
     text-align: center !important;
     color: color($colors, secondary, base);
   }
+}
+
+.alert-md .alert-head, .alert-ios .alert-head{
+  text-align: center !important;
+  padding: 10px 0px 10px 0px !important;
+}
+.alert-md .alert-message:empty, .alert-ios .alert-message:empty{
+  display: none !important;
 }
