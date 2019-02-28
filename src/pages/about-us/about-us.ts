@@ -50,9 +50,9 @@ export class AboutUsPage {
     })
   }
 
-  // GoToOpenWindow(TempURL){
-  //   window.open(TempURL);
-  // }
+  GoToOpenWindow(TempURL){
+    window.open(TempURL);
+  }
 
   GoToChoosenPage(Temp) {
     if (Temp == 'ProfilePage' && !this.api.UserData['id']) {

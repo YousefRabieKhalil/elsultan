@@ -34,6 +34,8 @@ export class TabsPage {
       this.events.subscribe('NumberOfOrders', () => {
         this.NumberOfOrders = this.api.NumberOrders;
       });
+
+
   }
 
   ionViewDidLoad() {
@@ -42,6 +44,7 @@ export class TabsPage {
 
   onTabsChange() {
     this.helper_tools.SelectedTab = this.MainTabs.getSelected().index;
+    this.events.publish('CartChanged');
     console.log(this.MainTabs.getSelected().index);
   }
 

@@ -119,7 +119,11 @@ export class MyOrdersDetailsPage {
   }
 
   OrderNow() {
-    if (this.api.UserData['id']) {
+    if (this.Order['price'] == '0' && this.Order['pricemafrom'] == '0') {
+      this.helper_tools.showAlertWithOkButton('خطأ', 'برجاء اضافه كميه مفروم او كميه عادي');
+      return;
+    }
+    else if (this.api.UserData['id']) {
       this.AddToCartFunc();
       this.navCtrl.push('MyCartDetailsPage');
     } else {

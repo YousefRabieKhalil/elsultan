@@ -18,7 +18,7 @@ import { ApiProvider } from '../../providers/api/api';
 })
 export class MyCartOrdersPage {
   DetailsOfOrder;
-  Products;
+  Products = {} as any;
   constructor(public navCtrl: NavController, public navParams: NavParams, private helper_tools: HelperToolsProvider,
     private product_controller: ProductConntrollerProvider, private api: ApiProvider,
     private modalCtrl: ModalController) {
@@ -27,14 +27,7 @@ export class MyCartOrdersPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad MyCartOrdersPage');
     this.DetailsOfOrder = this.navParams.get('OrderItem');
-    this.helper_tools.ShowLoadingSpinnerOnly().then(_ => {
-      this.helper_tools.DismissLoading();
-      this.ShowProductsOfOrders();
-    }).catch(err => {
-      console.log(err);
-      this.helper_tools.DismissLoading();
-      this.helper_tools.ShowBadRequestErrorAlert();
-    })
+    this.ShowProductsOfOrders();
   }
 
   GoToChoosenPage(Temp) {
@@ -49,9 +42,11 @@ export class MyCartOrdersPage {
     }
   }
 
-  ShowProductsOfOrders(){
-    this.product_controller.LoadAllProductsInOrders(this.DetailsOfOrder).subscribe(Data => {
-      if(Data['Status'] == 'success'){
+  ShowProductsOfOrders() {
+    console.log(this.DetailsOfOrder);
+    this.product_controller.LoadAllProductsInOrders(this.DetailsOfOrder['order_id']).subscribe(Data => {
+      console.log(Data);
+      if (Data['Status'] == 'success') {
         this.Products = Data['message'][0];
       } else {
         console.log(Data);
@@ -62,12 +57,14 @@ export class MyCartOrdersPage {
     })
   }
 
-  DeleteItem(Temp){
+  DeleteItem(Temp) {
+    console.log(Temp);
     let DataSent = {
-      product_id: Temp['id']
+      product_id: Temp['product_id'],
+      order_id: this.DetailsOfOrder.order_id
     }
     this.product_controller.DeleteProductItemOrder(DataSent).subscribe(Data => {
-      if(Data['Status'] == 'success'){
+      if (Data['Status'] == 'success') {
         this.helper_tools.showAlertWithOkButton('نجاح', 'تم مسح العنصر بنجاح');
         this.ionViewDidLoad();
       } else {

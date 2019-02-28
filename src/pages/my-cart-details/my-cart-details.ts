@@ -47,9 +47,11 @@ export class MyCartDetailsPage {
     var modal = this.modalCtrl.create('MapModalePage');
       modal.present();
       modal.onDidDismiss(Data => {
-        console.log(Data);
+        if(Data){
+          console.log(Data);
         this.lat = Data.RetreiveLat;
         this.lan = Data.RetreiveLong;
+        }
       })
   }
 
