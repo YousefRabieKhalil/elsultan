@@ -56,7 +56,6 @@ export class MyCartDetailsPage {
   OpenDate(){
     this.datePicker.show({
       date: new Date(),
-      todayText: 'date',
       mode: 'date',
       androidTheme: this.datePicker.ANDROID_THEMES.THEME_HOLO_DARK
     }).then(
