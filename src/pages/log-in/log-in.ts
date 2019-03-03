@@ -44,6 +44,7 @@ export class LogInPage {
   LoInFunc(){
     this.helper_tools.ShowLoadingSpinnerOnly().then(_ => {
       this.api.UserLogIn(this.LoginData).subscribe(Data => {
+        console.log(Data);
         this.helper_tools.DismissLoading();
         if(Data['Status'] == 'success'){
           this.helper_tools.showAlertWithOkButton('نجاح', 'تم تسجيل الدخول بنجاح');

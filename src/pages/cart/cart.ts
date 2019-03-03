@@ -26,12 +26,16 @@ export class CartPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad CartPage');
-    this.Carts = this.product_controller.CartAdded;
-    if (this.Carts.length != 0) {
-      this.ShowItems = true;
-    } else {
-      this.ShowItems = false;
-    }
+    this.events.subscribe('CartChanged', () => {
+      this.Carts = this.product_controller.CartAdded;
+      console.log(this.Carts);
+      if (this.Carts.length != 0) {
+        this.ShowItems = true;
+      } else {
+        this.ShowItems = false;
+      }
+    })
+
   }
 
   GotoDetailsPage() {
@@ -42,6 +46,9 @@ export class CartPage {
     this.product_controller.CartAdded.splice(i, 1);
     this.storage.set('CartSaved', this.product_controller.CartAdded);
     this.api.NumberOrders = this.product_controller.CartAdded.length;
+    if(this.product_controller.CartAdded.length == 0){
+      this.ShowItems = false;
+    }
     this.events.publish('NumberOfOrders');
     this.ionViewDidLoad();
   }

@@ -22,16 +22,16 @@
     <span>طلباتي</span>
   </div>
 
-  <div class="NotValues" *ngIf="!ShowItems">
+  <div class="NotValues" *ngIf="!Orders.length">
     <span>لا توجد عناصر في السلة</span>
   </div>
 
-  <div *ngIf="ShowItems">
-    <ion-row class="Items" *ngFor="let Order of Orders" (click)="GoToDetails(Order)">
-      <ion-col col-2 class="TrashIcon" *ngIf="Order.stutas == 0 && Order.stutas == 1" (click)="DeleteItem(Order)">
+  <div *ngIf="Orders.length">
+    <ion-row class="Items" *ngFor="let Order of Orders" >
+      <ion-col col-2 class="TrashIcon" *ngIf="Order.stutas == 0 || Order.stutas == 1" (click)="DeleteItem(Order)">
         <ion-icon name="ios-trash-outline"></ion-icon>
       </ion-col>
-      <ion-col col-10 class="Data">
+      <ion-col col-10 class="Data" (click)="GoToDetails(Order)">
         <p>اجمالي السعر: {{ Order?.totalprice }} ريال سعودي</p>
         <h1>عدد المنتجات: {{ Order?.countproduct }}</h1>
       </ion-col>
