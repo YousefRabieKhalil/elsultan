@@ -69,4 +69,15 @@ export class CountryPage {
     this.navCtrl.push('TabsPage');
   }
 
+  url(id) {
+    switch (id) {
+      case 1:
+        return ("url('../assets/imgs/1.png')");
+      case 2:
+        return ("url('../assets/imgs/3.png')");
+      case 3:
+        return ("url('../assets/imgs/4.png')");
+    }
+  }
+
 }
