@@ -117,7 +117,7 @@ export class MyCartDetailsPage {
       recivetime: this.recivetime,
       totalprice: this.TotalPrice,
       product: this.product_controller.CartAdded,
-      gove_id: this.api.CountryID
+      gove_id: this.api.CountryID['id']
     }
     if(this.recive_date){
       this.helperTools.ShowLoadingSpinnerOnly().then(_ => {

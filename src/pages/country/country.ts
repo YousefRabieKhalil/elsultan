@@ -48,35 +48,35 @@ export class CountryPage {
     })
   }
 
-  GoToChoosenPage(Temp) {
-    if (Temp == 'ProfilePage' && !this.api.UserData['id']) {
-      var modal = this.modalCtrl.create('LogInPage');
-      modal.present();
-      modal.onDidDismiss(Data => {
-        this.navCtrl.setRoot('TabsPage');
-      })
-    } else {
-      this.navCtrl.push(Temp);
-    }
-  }
+  // GoToChoosenPage(Temp) {
+  //   if (Temp == 'ProfilePage' && !this.api.UserData['id']) {
+  //     var modal = this.modalCtrl.create('LogInPage');
+  //     modal.present();
+  //     modal.onDidDismiss(Data => {
+  //       this.navCtrl.setRoot('TabsPage');
+  //     })
+  //   } else {
+  //     this.navCtrl.push(Temp);
+  //   }
+  // }
 
   // OpenLink(){
   //   window.open('http://www.facebook.com');
   // }
 
   GoToHome(Temp) {
-    this.api.CountryID = Temp['id'];
+    this.api.CountryID = Temp;
     this.navCtrl.push('TabsPage');
   }
 
   url(id) {
     switch (id) {
       case 1:
-        return ("url('../assets/imgs/1.png')");
+        return ("url('assets/imgs/1.png')");
       case 2:
-        return ("url('../assets/imgs/3.png')");
+        return ("url('assets/imgs/3.png')");
       case 3:
-        return ("url('../assets/imgs/4.png')");
+        return ("url('assets/imgs/4.png')");
     }
   }
 
