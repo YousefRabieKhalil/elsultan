@@ -40,7 +40,7 @@ export class MyOrdersDetailsPage {
   GetAllDetailsOfProduct() {
     this.helper_tools.ShowLoadingSpinnerOnly().then(_ => {
       this.product_controller.LoadAllDetailsOfProduct(this.IDProduct['id']).subscribe(Data => {
-        if(this.api.CountryID['gove'] == 'الطائف'){
+        if (this.api.CountryID['gove'] == 'الطائف') {
           this.ApearPriceOfShipping = false;
         }
         this.helper_tools.DismissLoading();
@@ -57,7 +57,7 @@ export class MyOrdersDetailsPage {
           this.DetailsOfOrdersCut = Data['cut'];
           this.Order['cut_id'] = this.DetailsOfOrdersCut[0]['id'];
           this.AppearDataOfMafrom = false;
-      } else {
+        } else {
           console.log(Data);
           this.helper_tools.ShowBadRequestErrorAlert();
         }
@@ -73,8 +73,8 @@ export class MyOrdersDetailsPage {
     })
   }
 
-  CutChanged(){
-    if(this.Order['cut_id'] == 9){
+  CutChanged() {
+    if (this.Order['cut_id'] == 9) {
       this.AppearDataOfMafrom = true;
     }
   }
@@ -120,7 +120,11 @@ export class MyOrdersDetailsPage {
         this.storage.set('CartSaved', this.product_controller.CartAdded);
         this.helper_tools.ShowAlertWithTranslation('نجاح', 'تم تعديل العنصر بنجاح');
       }*/ else {
-      this.Order['totalprice'] = (this.Order['price']) + (this.Order['pricemafrom']) + 100;
+      if (this.ApearPriceOfShipping == true) {
+        this.Order['totalprice'] = (this.Order['price']) + (this.Order['pricemafrom']) + 100;
+      } else {
+        this.Order['totalprice'] = (this.Order['price']) + (this.Order['pricemafrom']);
+      }
       this.product_controller.CartAdded.push(this.Order);
       this.api.NumberOrders = this.product_controller.CartAdded.length;
       this.events.publish('NumberOfOrders');
