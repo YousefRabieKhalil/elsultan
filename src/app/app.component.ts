@@ -1,5 +1,5 @@
 import { HelperToolsProvider } from './../providers/helper-tools/helper-tools';
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -9,7 +9,6 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class MyApp {
   rootPage: any = 'CountryPage';
-
   constructor(public platform: Platform, private statusBar: StatusBar,private translate: TranslateService,
     private splashScreen: SplashScreen, private helperTools: HelperToolsProvider) {
     this.PlatformIsRead();
@@ -26,9 +25,9 @@ export class MyApp {
       // set the color of icons and text of status bar to dark
       this.statusBar.styleDefault();
       this.splashScreen.hide();
-      this.platform.registerBackButtonAction(() => {
-        this.helperTools.onRegisterBackButtonFunction();
-      }, 1);
+      // this.platform.registerBackButtonAction(() => {
+      //   this.helperTools.onRegisterBackButtonFunction();
+      // }, 1);
     });
   }
 

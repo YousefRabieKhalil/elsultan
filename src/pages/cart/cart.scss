@@ -75,6 +75,8 @@ page-cart {
             }
             h1{
                 color: color($colors, primary, base) !important;
+            } p{
+                direction: rtl !important;
             }
         }
     }

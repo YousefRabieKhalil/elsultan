@@ -41,11 +41,12 @@ export class HomePage {
   LoadAllProducts(){
     this.helper_tools.ShowLoadingSpinnerOnly().then(_ => {
       this.api.GetAllProducts().subscribe(Data => {
-        this.helper_tools.DismissLoading();
         if(Data['Status'] == 'success'){
           this.Products = Data['message'];
+          this.helper_tools.DismissLoading();
         } else{
           console.log(Data);
+          this.helper_tools.DismissLoading();
           this.helper_tools.ShowBadRequestErrorAlert();
         }
       }, err => {
