@@ -25,9 +25,6 @@ export class MyApp {
       // set the color of icons and text of status bar to dark
       this.statusBar.styleDefault();
       this.splashScreen.hide();
-      // this.platform.registerBackButtonAction(() => {
-      //   this.helperTools.onRegisterBackButtonFunction();
-      // }, 1);
     });
   }
 
