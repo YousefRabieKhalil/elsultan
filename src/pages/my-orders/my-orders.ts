@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams, ModalController, Events } from 'io
 import { ApiProvider } from '../../providers/api/api';
 import { ProductConntrollerProvider } from '../../providers/product-conntroller/product-conntroller';
 import { HelperToolsProvider } from '../../providers/helper-tools/helper-tools';
+import { Storage } from '@ionic/storage';
 
 /**
  * Generated class for the MyOrdersPage page.
@@ -21,7 +22,8 @@ export class MyOrdersPage {
   Orders = [] as any;
   ShowItems = true;
   constructor(public navCtrl: NavController, public navParams: NavParams, private productController: ProductConntrollerProvider,
-    private api: ApiProvider, private modalCtrl: ModalController, private helper_tools: HelperToolsProvider, private events: Events) {
+    private api: ApiProvider, private modalCtrl: ModalController,private storage: Storage,
+    private helper_tools: HelperToolsProvider, private events: Events) {
   }
 
   ionViewDidLoad() {

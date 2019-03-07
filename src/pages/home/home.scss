@@ -50,7 +50,7 @@ page-home {
             padding: 0px !important;
         }
         ion-card-content{
-            background-color: color($colors, Third, base) !important;
+            background-color: color($colors, primary, base) !important;
             padding: 5px 0px 5px 0px !important;
             h1{
                 font-weight: bold !important;
@@ -59,7 +59,7 @@ page-home {
                 white-space: nowrap;
                 text-overflow: ellipsis;
                 overflow: hidden;
-                color: black !important;
+                color: white !important;
             }
         }
     }

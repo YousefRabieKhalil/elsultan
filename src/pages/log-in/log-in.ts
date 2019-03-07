@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ViewController, ModalController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ViewController, ModalController, Events } from 'ionic-angular';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { HelperToolsProvider } from '../../providers/helper-tools/helper-tools';
 import { ApiProvider } from '../../providers/api/api';
+import { Storage } from '@ionic/storage';
 
 /**
  * Generated class for the LogInPage page.
@@ -21,7 +22,7 @@ export class LogInPage {
   LoginData = {} as any;
   constructor(public navCtrl: NavController, public navParams: NavParams,private helper_tools: HelperToolsProvider,
     public formBuilder: FormBuilder, private api: ApiProvider, private modalCtrl: ModalController,
-    private viewCtrl: ViewController) {
+    private viewCtrl: ViewController, private storage: Storage, private events: Events) {
     this.buildForm();
   }
 

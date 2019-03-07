@@ -22,7 +22,6 @@ export class MyOrdersDetailsPage {
   DetailsOfOrdersCut;
   Order = {} as any;
   IDProduct;
-  ApearPriceOfShipping = true;
   AppearDataOfMafrom = false;
   SelectedTemp;
   constructor(public navCtrl: NavController, private modalCtrl: ModalController, private events: Events,
@@ -40,9 +39,6 @@ export class MyOrdersDetailsPage {
   GetAllDetailsOfProduct() {
     this.helper_tools.ShowLoadingSpinnerOnly().then(_ => {
       this.product_controller.LoadAllDetailsOfProduct(this.IDProduct['id']).subscribe(Data => {
-        if (this.api.CountryID['gove'] == 'الطائف') {
-          this.ApearPriceOfShipping = false;
-        }
         this.helper_tools.DismissLoading();
         if (Data['Status'] == 'success') {
           this.DetailsOfOrdersWeight = Data['wight'];
@@ -76,6 +72,9 @@ export class MyOrdersDetailsPage {
   CutChanged() {
     if (this.Order['cut_id'] == 9) {
       this.AppearDataOfMafrom = true;
+      this.Order['qmafrom'] = 0;
+      this.Order['pricemafrom'] = 0;
+
     }
   }
 
@@ -120,11 +119,7 @@ export class MyOrdersDetailsPage {
         this.storage.set('CartSaved', this.product_controller.CartAdded);
         this.helper_tools.ShowAlertWithTranslation('نجاح', 'تم تعديل العنصر بنجاح');
       }*/ else {
-      if (this.ApearPriceOfShipping == true) {
-        this.Order['totalprice'] = (this.Order['price']) + (this.Order['pricemafrom']) + 100;
-      } else {
-        this.Order['totalprice'] = (this.Order['price']) + (this.Order['pricemafrom']);
-      }
+      this.Order['totalprice'] = (this.Order['price']) + (this.Order['pricemafrom']);
       this.product_controller.CartAdded.push(this.Order);
       this.api.NumberOrders = this.product_controller.CartAdded.length;
       this.events.publish('NumberOfOrders');

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
 import { ApiProvider } from '../../providers/api/api';
 import { HelperToolsProvider } from '../../providers/helper-tools/helper-tools';
+import { Storage } from '@ionic/storage';
 
 /**
  * Generated class for the WayUsPage page.
@@ -18,7 +19,7 @@ import { HelperToolsProvider } from '../../providers/helper-tools/helper-tools';
 export class WayUsPage {
   InstituteHelp = '';
   constructor(public navCtrl: NavController, public navParams: NavParams,private helper_tools: HelperToolsProvider,
-    private api: ApiProvider, private modalCtrl: ModalController) {
+    private api: ApiProvider, private modalCtrl: ModalController, private storage: Storage) {
   }
 
   ionViewDidLoad() {
