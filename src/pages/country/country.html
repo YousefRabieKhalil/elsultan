@@ -14,11 +14,11 @@
       </ion-buttons> -->
       <ion-title text-right>ذبائح الطائف</ion-title>
     </ion-navbar>
-  
+
   </ion-header>
 
 <ion-content no-padding>
-  <h1>اختر مدينتك</h1>
+  <h1>اختار مدينتك</h1>
   <button ion-button clear full block class="Countries" *ngFor="let CountryCity of Countries" [ngStyle]="{'background-image' : url(CountryCity.id)}" (click)="GoToHome(CountryCity)">
     <div class="TransparentColor">
       <span class="textclass">{{ CountryCity?.gove }}</span>
