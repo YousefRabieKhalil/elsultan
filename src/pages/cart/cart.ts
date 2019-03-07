@@ -53,9 +53,6 @@ export class CartPage {
     this.ionViewDidLoad();
   }
 
-  // GoToOpenWindow(TempURL){
-  //   window.open(TempURL);
-  // }
 
   GoToChoosenPage(Temp) {
     if (Temp == 'ProfilePage' && !this.api.UserData['id']) {
@@ -76,7 +73,7 @@ export class CartPage {
       var modal = this.modalCtrl.create('LogInPage');
       modal.present();
       modal.onDidDismiss(Data => {
-
+        
       })
     }
   }

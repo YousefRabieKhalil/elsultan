@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angu
 import { HelperToolsProvider } from '../../providers/helper-tools/helper-tools';
 import { ApiProvider } from '../../providers/api/api';
 import { SharedClass } from '../../providers/SharedClass';
+import { Storage } from '@ionic/storage';
 
 /**
  * Generated class for the HomePage page.
@@ -22,7 +23,7 @@ export class HomePage {
   OneProduct;
   constructor(public navCtrl: NavController, private modalCtrl: ModalController,
     public navParams: NavParams, private helper_tools: HelperToolsProvider,
-    private api: ApiProvider) {
+    private api: ApiProvider, private storage: Storage) {
   }
 
   ionViewDidLoad() {
@@ -43,12 +44,11 @@ export class HomePage {
       this.api.GetAllProducts().subscribe(Data => {
         if(Data['Status'] == 'success'){
           this.Products = Data['message'];
-          this.helper_tools.DismissLoading();
         } else{
           console.log(Data);
-          this.helper_tools.DismissLoading();
           this.helper_tools.ShowBadRequestErrorAlert();
         }
+        this.helper_tools.DismissLoading();
       }, err => {
         console.log(err);
         this.helper_tools.DismissLoading();

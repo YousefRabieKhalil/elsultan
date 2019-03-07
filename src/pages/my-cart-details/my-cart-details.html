@@ -1,9 +1,9 @@
 <ion-header no-border color="primary">
 
     <ion-navbar color="primary">
-      <ion-buttons class="Header" end>
+      <!-- <ion-buttons class="Header" end>
         <img src="./assets/imgs/logo3.png">
-      </ion-buttons>
+      </ion-buttons> -->
       <ion-buttons left>
         <button ion-button class="PropBTN" icon-only color="white" (click)="GoToChoosenPage('WayUsPage')">
           <ion-icon name="ios-alert-outline"></ion-icon>
@@ -12,7 +12,7 @@
             <ion-icon name="person"></ion-icon>
           </button>
       </ion-buttons>
-      <ion-title text-right>ذبائح الطائف</ion-title>
+      <ion-title text-center>ذبائح الطائف</ion-title>
     </ion-navbar>
   
   </ion-header>
@@ -38,6 +38,57 @@
 
   <div class="RadioBTN" id="Selected3" (click)="AddClass3('من ٤ عصرا الى ١٠ مساءا')">من ٤ عصرا الى ١٠ مساءا</div>
 
+  <div class="DetailsPrice">
+    <p>
+      <span>السعر = </span>
+      <span *ngFor="let Data of DataInfo; let i = index">
+          {{ Data?.price }} * {{ Data?.quent }}
+          <span *ngIf="Length - 1 != i"> + </span>
+      </span>
+      <span> = </span>
+      <span> {{ TotalPriceNormal }} ريال سعودي</span>
+    </p>
+
+    <p *ngIf="TotalPriceMafrom != 0">
+      <span>سعر المفروم = </span>
+      <span *ngFor="let Data of DataInfo; let i = index">
+          {{ Data?.pricemafrom }} * {{ Data?.qmafrom }}
+          <span *ngIf="Length - 1 != i"> + </span>
+      </span>
+      <span> = </span>
+      <span> {{ TotalPriceMafrom }} ريال سعودي </span>
+    </p>
+
+    <p>
+      <span>اجمالي السعر = </span>
+      <span *ngIf="TotalPriceMafrom != 0">
+          {{ TotalPriceNormal }} + {{ TotalPriceMafrom }}
+      </span>
+      <span *ngIf="TotalPriceMafrom != 0"> = </span>
+      <span> {{ TotalPriceWithoutCharge }} ريال سعودي </span>
+    </p>
+
+    <p *ngIf="Governate != 'الطائف'">
+      <span>مصاريف الشحن = </span>
+      <span>
+         100 ريال سعودي
+      </span>
+    </p>
+
+    <p class="NoBorder">
+      <span>السعر الكلي = </span>
+      <span *ngIf="Governate != 'الطائف'">
+          {{ TotalPriceWithoutCharge }} + 100
+      </span>
+      <span *ngIf="Governate == 'الطائف'">
+         {{ TotalPriceWithoutCharge }} ريال سعودي
+      </span>
+      <span *ngIf="Governate != 'الطائف'">
+        <span> = </span>
+        <span> {{ TotalPriceWithCharge }} ريال سعودي </span>
+      </span>
+    </p>
+  </div>
   <div class="OrderBTN" (click)="OrderNow()">
     <ion-icon name="logo-usd"></ion-icon>
     <p>اطلب الان</p>

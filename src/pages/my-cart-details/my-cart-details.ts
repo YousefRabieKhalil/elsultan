@@ -26,6 +26,13 @@ export class MyCartDetailsPage {
   Green = false;
   Gray = true;
   TotalPrice = 0;
+  DataInfo = [] as any;
+  TotalPriceNormal = 0;
+  TotalPriceMafrom = 0;
+  Length = 0;
+  TotalPriceWithoutCharge = 0;
+  TotalPriceWithCharge = 0;
+  Governate = '';
   constructor(public navCtrl: NavController, public navParams: NavParams,private product_controller: ProductConntrollerProvider,
     private datePicker: DatePicker, private modalCtrl: ModalController, private api: ApiProvider,
     private helperTools: HelperToolsProvider, private storage: Storage) {
@@ -38,8 +45,19 @@ export class MyCartDetailsPage {
     document.getElementById('Selected1').classList.add("Green");
     document.getElementById('Selected2').classList.add("Gray");
     document.getElementById('Selected3').classList.add("Gray");
+    this.DataInfo = this.product_controller.CartAdded;
+    this.Length = this.product_controller.CartAdded.length;
     for(let i=0; i < this.product_controller.CartAdded.length; i++){
+      this.TotalPriceNormal = this.TotalPriceNormal + (this.product_controller.CartAdded[i]['price'] * this.product_controller.CartAdded[i]['quent']);
+      this.TotalPriceMafrom = this.TotalPriceMafrom + (this.product_controller.CartAdded[i]['pricemafrom'] * this.product_controller.CartAdded[i]['qmafrom']);
       this.TotalPrice = this.TotalPrice + this.product_controller.CartAdded[i]['totalprice'];
+    }
+    this.TotalPriceWithoutCharge = this.TotalPriceMafrom + this.TotalPriceNormal;
+    this.Governate = this.api.CountryID['gove'];
+    if(this.api.CountryID['gove'] == 'الطائف'){
+      this.TotalPriceWithCharge = this.TotalPriceWithoutCharge;
+    } else{
+      this.TotalPriceWithCharge = this.TotalPriceWithoutCharge + 100;
     }
   }
 

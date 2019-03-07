@@ -83,8 +83,7 @@ page-my-cart-details {
     }
     .OrderBTN{
         width: 100% !important;
-        position: absolute;
-        bottom: 0px;
+        margin: 0px !important;
         padding: 5px !important;
         border-bottom: 1px solid color($colors, BackDark, base) !important;
         text-align: center;
@@ -100,6 +99,23 @@ page-my-cart-details {
             font-weight: bold;
             color: white;
             margin: 5px 0px 0px 0px !important;
+        }
+    }
+    .DetailsPrice{
+        border-radius: 10px !important;
+        background-color: color($colors, primary, base) !important;
+        padding: 10px !important;
+        text-align: right;
+        width: 95%;
+        margin: 0px 2.5% 20px 2.5% !important;
+        p{
+            color: white;
+            font-size: 16px;
+            margin: 0px 0px 10px 0px !important;
+            border-bottom: 1px solid white !important;
+        }
+        .NoBorder{
+            border-bottom: none !important;
         }
     }
 }
