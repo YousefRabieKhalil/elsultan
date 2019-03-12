@@ -23,9 +23,6 @@ export class HomePage {
     console.log('ionViewDidLoad HomePage');
     this.ImageLink = SharedClass.BASE_URL_IMAGE;
     this.LoadAllProducts();
-    if(this.Products.length % 2 != 0 && this.Products.length != 1){
-      this.OneProduct = this.Products.pop();
-    }
   }
 
   LoadAllProducts(){
@@ -33,6 +30,10 @@ export class HomePage {
       this.api.GetAllProducts().subscribe(Data => {
         if(Data['Status'] == 'success'){
           this.Products = Data['message'];
+          if(this.Products.length % 2 != 0 && this.Products.length != 1){
+            this.OneProduct = this.Products.pop();
+            console.log(this.OneProduct);
+          }
         } else{
           console.log(Data);
           this.helper_tools.ShowBadRequestErrorAlert();
