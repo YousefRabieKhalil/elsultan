@@ -5,13 +5,6 @@ import { ApiProvider } from '../../providers/api/api';
 import { SharedClass } from '../../providers/SharedClass';
 import { Storage } from '@ionic/storage';
 
-/**
- * Generated class for the HomePage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
 @IonicPage()
 @Component({
   selector: 'page-home',
