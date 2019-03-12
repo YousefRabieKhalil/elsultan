@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
 import { HelperToolsProvider } from '../../providers/helper-tools/helper-tools';
 import { ApiProvider } from '../../providers/api/api';
+import { SharedClass } from '../../providers/SharedClass';
 
 /**
  * Generated class for the CountryPage page.
@@ -17,6 +18,7 @@ import { ApiProvider } from '../../providers/api/api';
 })
 export class CountryPage {
   Countries;
+  ImageLink;
   constructor(public navCtrl: NavController, public navParams: NavParams, private helper_tools: HelperToolsProvider,
     private api: ApiProvider, private modalCtrl: ModalController) {
   }
@@ -31,6 +33,7 @@ export class CountryPage {
       this.api.GetAllCountries().subscribe(Data => {
         if(Data['Status'] == 'success'){
           this.Countries = Data['message'];
+          this.ImageLink = SharedClass.BASE_URL_IMAGE;
           this.helper_tools.DismissLoading();
         }else {
           console.log(Data);
@@ -69,14 +72,14 @@ export class CountryPage {
     this.navCtrl.push('TabsPage');
   }
 
-  url(id) {
+  url(id, Image) {
     switch (id) {
       case 1:
-        return ("url('assets/imgs/1.png')");
+        return (`url(${this.ImageLink + Image})`);
       case 2:
-        return ("url('assets/imgs/3.png')");
+        return (`url(${this.ImageLink + Image})`);
       case 3:
-        return ("url('assets/imgs/4.png')");
+        return (`url(${this.ImageLink + Image})`);
     }
   }
 
