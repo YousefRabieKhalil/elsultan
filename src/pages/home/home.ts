@@ -35,10 +35,6 @@ export class HomePage {
     }
   }
 
-  // GoToOpenWindow(){
-  //   window.open('http://www.facebook.com');
-  // }
-
   LoadAllProducts(){
     this.helper_tools.ShowLoadingSpinnerOnly().then(_ => {
       this.api.GetAllProducts().subscribe(Data => {
