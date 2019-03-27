@@ -68,6 +68,21 @@
     </ion-col>
   </ion-row>
 
+  <ion-row class="InputField MassRow">
+    <ion-col col-5 class="CutSpan">
+      <span>التغليف</span>
+    </ion-col>
+    <ion-col col-7 class="MassCol">
+      <ion-item class="MassValue CutItem">
+        <ion-select class="ChangeStyle" [(ngModel)]="Order.packag" interface="action-sheet" okText="تم" cancelText="إلغاء">
+          <ion-option value="اكياس">اكياس</ion-option>
+          <ion-option value="سحون">سحون</ion-option>
+          <ion-option selected="true" value="بدون">بدون</ion-option>
+        </ion-select>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+
   <ion-row class="InputField CenterPlusMinus">
     <ion-col col-5 class="PriceSpan">
       <span>الكمية</span>
