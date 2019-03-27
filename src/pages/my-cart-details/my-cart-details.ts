@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ModalController, Events } from 'ionic-angular';
 import { DatePicker } from '@ionic-native/date-picker';
 import { ProductConntrollerProvider } from '../../providers/product-conntroller/product-conntroller';
 import { ApiProvider } from '../../providers/api/api';
@@ -34,7 +34,7 @@ export class MyCartDetailsPage {
   TotalPriceWithCharge = 0;
   Governate = '';
   constructor(public navCtrl: NavController, public navParams: NavParams,private product_controller: ProductConntrollerProvider,
-    private datePicker: DatePicker, private modalCtrl: ModalController, private api: ApiProvider,
+    private datePicker: DatePicker, private modalCtrl: ModalController, private api: ApiProvider, private events: Events,
     private helperTools: HelperToolsProvider, private storage: Storage) {
 
   }
@@ -144,6 +144,8 @@ export class MyCartDetailsPage {
           if(Data['Status'] == 'success'){
             this.product_controller.CartAdded = [] as any;
             this.storage.remove('CartSaved');
+            this.api.NumberOrders = this.product_controller.CartAdded.length;
+            this.events.publish('NumberOfOrders');
             this.helperTools.showAlertWithOkButton('نجاح', 'تم ارسال طلباتك بنجاح');
             this.navCtrl.setRoot('TabsPage');
           } else{
