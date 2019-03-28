@@ -42,21 +42,21 @@
     <p>
       <span>السعر = </span>
       <span *ngFor="let Data of DataInfo; let i = index">
-          {{ Data?.price }} * {{ Data?.quent }}
+          {{ Data?.price }}
           <span *ngIf="Length - 1 != i"> + </span>
       </span>
-      <span> = </span>
-      <span> {{ TotalPriceNormal }} ريال سعودي</span>
+      <span *ngIf="Length != 1"> = </span>
+      <span *ngIf="Length != 1"> {{ TotalPriceNormal }} ريال سعودي</span>
     </p>
 
     <p *ngIf="TotalPriceMafrom != 0">
       <span>سعر المفروم = </span>
       <span *ngFor="let Data of DataInfo; let i = index">
-          {{ Data?.pricemafrom }} * {{ Data?.qmafrom }}
+          {{ Data?.pricemafrom }}
           <span *ngIf="Length - 1 != i"> + </span>
       </span>
-      <span> = </span>
-      <span> {{ TotalPriceMafrom }} ريال سعودي </span>
+      <span *ngIf="Length != 1"> = </span>
+      <span *ngIf="Length != 1"> {{ TotalPriceMafrom }} ريال سعودي </span>
     </p>
 
     <p>

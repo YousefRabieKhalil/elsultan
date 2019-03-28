@@ -48,8 +48,8 @@ export class MyCartDetailsPage {
     this.DataInfo = this.product_controller.CartAdded;
     this.Length = this.product_controller.CartAdded.length;
     for(let i=0; i < this.product_controller.CartAdded.length; i++){
-      this.TotalPriceNormal = this.TotalPriceNormal + (this.product_controller.CartAdded[i]['price'] * this.product_controller.CartAdded[i]['quent']);
-      this.TotalPriceMafrom = this.TotalPriceMafrom + (this.product_controller.CartAdded[i]['pricemafrom'] * this.product_controller.CartAdded[i]['qmafrom']);
+      this.TotalPriceNormal = this.TotalPriceNormal + (this.product_controller.CartAdded[i]['price']);
+      this.TotalPriceMafrom = this.TotalPriceMafrom + (this.product_controller.CartAdded[i]['pricemafrom']);
       this.TotalPrice = this.TotalPrice + this.product_controller.CartAdded[i]['totalprice'];
     }
     this.TotalPriceWithoutCharge = this.TotalPriceMafrom + this.TotalPriceNormal;
