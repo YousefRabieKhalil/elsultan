@@ -43,6 +43,7 @@ export class MyOrdersDetailsPage {
         if (Data['Status'] == 'success') {
           this.DetailsOfOrdersWeight = Data['wight'];
           this.Order['quent'] = 0;
+          this.Order['packag'] = "بدون";
           this.Order['note'] = '';
           this.Order['product_id'] = this.IDProduct['id'];
           this.Order['name'] = this.IDProduct['name'];
