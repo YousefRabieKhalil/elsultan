@@ -22,7 +22,6 @@ export class MyOrdersDetailsPage {
   DetailsOfOrdersCut;
   Order = {} as any;
   IDProduct;
-  AppearDataOfMafrom = false;
   SelectedTemp;
   constructor(public navCtrl: NavController, private modalCtrl: ModalController, private events: Events,
     public navParams: NavParams, private helper_tools: HelperToolsProvider, private api: ApiProvider,
@@ -53,7 +52,6 @@ export class MyOrdersDetailsPage {
           this.Order['pricemafrom'] = 0;
           this.DetailsOfOrdersCut = Data['cut'];
           this.Order['cut_id'] = this.DetailsOfOrdersCut[0]['id'];
-          this.AppearDataOfMafrom = false;
         } else {
           console.log(Data);
           this.helper_tools.ShowBadRequestErrorAlert();
@@ -68,15 +66,6 @@ export class MyOrdersDetailsPage {
       this.helper_tools.DismissLoading();
       this.helper_tools.ShowBadRequestErrorAlert();
     })
-  }
-
-  CutChanged() {
-    if (this.Order['cut_id'] == 9) {
-      this.AppearDataOfMafrom = true;
-      this.Order['qmafrom'] = 0;
-      this.Order['pricemafrom'] = 0;
-
-    }
   }
 
   WeightChanged() {

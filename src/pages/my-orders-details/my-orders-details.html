@@ -30,7 +30,7 @@
     </ion-col>
   </ion-row>
 
-  <ion-row class="InputField" *ngIf="AppearDataOfMafrom">
+  <ion-row class="InputField">
     <ion-col col-4 class="PriceSpan">
       <span>سعر المفروم</span>
     </ion-col>
@@ -58,7 +58,7 @@
     </ion-col>
     <ion-col col-7 class="MassCol">
       <ion-item class="MassValue CutItem">
-        <ion-select class="ChangeStyle" [(ngModel)]="Order.cut_id" interface="action-sheet" okText="تم" cancelText="إلغاء" (ionChange)="CutChanged()">
+        <ion-select class="ChangeStyle" [(ngModel)]="Order.cut_id" interface="action-sheet" okText="تم" cancelText="إلغاء">
           <ion-option *ngFor="let Cut of DetailsOfOrdersCut" [value]="Cut.id">{{ Cut?.name }}</ion-option>
         </ion-select>
       </ion-item>
@@ -95,7 +95,7 @@
     </ion-col>
   </ion-row>
 
-  <ion-row class="InputField CenterPlusMinus" *ngIf="AppearDataOfMafrom">
+  <ion-row class="InputField CenterPlusMinus">
     <ion-col col-5 class="PriceSpan">
       <span>كمية المفروم</span>
     </ion-col>
