@@ -76,41 +76,47 @@ page-my-orders-details {
         }
         .PriceSpan{
             padding-top: 10px !important;
-            padding-right: 5px !important;
+            padding-right: 8px !important;
         }
         span{
             text-align: right !important;
             font-size: 15px;
             font-weight: bold;
-            padding-right: 5px !important;
             color: color($colors, BackDark, base) !important;
         }
     }
     .MassRow{
-        padding: 10px 0px 10px 10px !important;
+        padding: 7px 0px 7px 5px !important;
         .MassSpan{
-            padding-top: 13px !important;
-        }
-        .MassValue{
-            ion-item, .item-inner{
-                padding: 0px 0px 0px 16px !important;
-            }
-            padding: 0px !important;
-            text-align: center !important;
+            padding-top: 3px !important;
+            padding-right: 8px !important;
         }
         .MassCol{
             border: 1px solid color($colors, primary, base) !important;
             border-radius: 10px !important;
-            padding: 5px !important;
-            background-color: white;
-        }
-        .CutSpan{
-            padding-top: 8px !important;
-        }
-        .CutItem{
-            min-height: 25px !important;
-            ion-select{
-                padding-left: 35% !important;
+            padding: 0px !important;
+            background-color: color($colors, primary, base) !important;;
+            height: 35px !important;
+            min-height: 35px !important;
+            .MassValue{
+                height: 33px !important;
+                min-height: 33px !important;
+                background-color: color($colors, primary, base) !important;
+                ion-select{
+                    max-width: 100% !important;
+                    min-width: 100% !important;
+                    height: 100% !important;
+                    .select-text{
+                        padding-top: 4px !important;
+                        color: white;
+                    }
+                }
+                padding: 0px !important;
+                text-align: center !important;
+            }
+            ion-item, .item-inner{
+                padding: 0px 0px 0px 0px !important;
+                border-radius: 10px !important;
             }
         }
     }
@@ -132,7 +138,7 @@ page-my-orders-details {
         }
     }.Result{
         margin: 0px 5px 0px 5px !important;
-        padding: 6px 0px 0px 5px !important;
+        padding: 4px 0px 0px 0px !important;
         span{
             color: color($colors, primary, base) !important;
         }
@@ -143,11 +149,11 @@ page-my-orders-details {
     }
     .CenterPlusMinus{
         .PriceSpan{
-            padding-top: 18px !important;
+            padding-top: 10px !important;
         }
         .Quantity{
             text-align: center;
-            padding: 15px 0px 15px 0px !important;
+            padding: 10px 0px 10px 0px !important;
         }
     }
     ion-textarea{

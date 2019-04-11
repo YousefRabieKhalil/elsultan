@@ -12,7 +12,7 @@
             <ion-icon name="person"></ion-icon>
           </button>
       </ion-buttons> -->
-      <ion-title text-center>ذبائح الطائف</ion-title>
+      <ion-title text-center>ذبايح الطائف</ion-title>
     </ion-navbar>
 
   </ion-header>
@@ -21,7 +21,9 @@
   <h1>اختار مدينتك</h1>
   <button ion-button clear full block class="Countries" *ngFor="let CountryCity of Countries" [ngStyle]="{'background-image' : url(CountryCity.id, CountryCity.image)}" (click)="GoToHome(CountryCity)">
     <div class="TransparentColor">
-      <span class="textclass">{{ CountryCity?.gove }}</span>
+      <div class="textclass">
+        <span>{{ CountryCity?.gove }}</span>
+      </div>
     </div>
   </button>
 </ion-content>
