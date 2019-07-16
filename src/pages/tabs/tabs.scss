@@ -11,9 +11,9 @@ page-tabs {
     }
     .tab-button[aria-selected=true]{
         ion-icon{
-            color: color($colors,BackDark ,base) !important;
+            color: color($colors,dark ,base) !important;
         }
-        color: color($colors,BackDark ,base) !important;
+        color: color($colors,dark ,base) !important;
         border-bottom: 5px solid white !important;
     }
 }
