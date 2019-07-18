@@ -38,10 +38,11 @@ page-home {
     }
     ion-card{
         margin: 10px 2.5% 5px 2.5% !important;
+        border-radius: 15px !important;
         padding: 0px !important;
         display: inline-block !important;
         width: 44% !important;
-        height: 168px;
+        height: 176px;
         img{
             width: 100%;
             height: 140px;
@@ -51,11 +52,12 @@ page-home {
         }
         ion-card-content{
             background-color: color($colors, primary, base) !important;
-            padding: 5px 0px 5px 0px !important;
+            padding: 10px 0px 10px 0px !important;
             h1{
                 font-weight: bold !important;
-                font-size: 15px !important;
-                margin: 0px !important;
+                font-size: 14px !important;
+                direction: rtl !important;
+                margin: 0px 5px 0px 5px !important;
                 white-space: nowrap;
                 text-overflow: ellipsis;
                 overflow: hidden;

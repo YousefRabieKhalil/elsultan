@@ -31,7 +31,7 @@ page-country {
         // background-position: center;
     }
     h1{
-        color: color($colors, BackDark, base) !important;
+        color: color($colors, primary, base) !important;
         font-size: 17px !important;
         font-weight: bold;
         margin: 15px 0px 15px 0px !important;
@@ -60,7 +60,7 @@ page-country {
             text-align: center;
             width: 125px;
             position: absolute;
-            background-color: rgba(243,144,63, 0.8);
+            background-color: rgba(63, 191, 241, 0.7);
             padding: 5px 10px !important;
             top: 0px;
             right: 0px;
