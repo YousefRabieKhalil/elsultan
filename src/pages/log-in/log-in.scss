@@ -7,7 +7,7 @@ page-log-in {
     }
     .HeaderContent{
         border-radius: 10px !important;
-        width: 100px;
+        width: 140px;
         height: 100px;
         margin: 25px 0px 5px 0px !important; 
     }
@@ -87,7 +87,7 @@ page-log-in {
         font-weight: bold;   
     }
     .Register{
-        background-color: rgba(163, 108, 73, 0.8);
+        background-color: rgba(0, 0, 0, 0.4);
         width: 100%;
         .RegisterationBtn{
             text-align: center;
@@ -98,7 +98,7 @@ page-log-in {
             height: 30px;
         }
         .PrimaryBtn{
-            color: color($colors, primary, base) !important;
+            color: white !important;
             margin: 0px 25% 0px 25% !important;
         }
     }
