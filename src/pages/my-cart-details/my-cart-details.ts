@@ -90,7 +90,6 @@ export class MyCartDetailsPage {
     });
   }
 
-<<<<<<< HEAD
   OpenDate(){
     this.datePicker.show({
       date: new Date(),
@@ -101,20 +100,6 @@ export class MyCartDetailsPage {
       date => this.recive_date = date,
       err => console.log('Error occurred while getting date: ', err)
     );
-=======
-  OpenDate() {
-    this.datePicker
-      .show({
-        date: new Date(),
-        mode: "date",
-        androidTheme: this.datePicker.ANDROID_THEMES.THEME_HOLO_DARK,
-        minDate: new Date()
-      })
-      .then(
-        date => (this.recive_date = date),
-        err => console.log("Error occurred while getting date: ", err)
-      );
->>>>>>> 1339a3bf5979443ff553f6525457930f607b40dc
   }
 
   GoToChoosenPage(Temp) {
