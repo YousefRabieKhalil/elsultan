@@ -35,11 +35,33 @@ export class TabsPage {
       this.NumberOfOrders = this.api.NumberOrders;
     });
 
-
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad TabsPage');
+    this.LoadAllCountries();
+  }
+
+  LoadAllCountries() {
+    this.helper_tools.ShowLoadingSpinnerOnly().then(_ => {
+      this.api.GetAllCountries().subscribe(Data => {
+        if(Data['Status'] == 'success'){
+          this.api.CountryID = Data['message'][0];
+          this.helper_tools.DismissLoading();
+        }else {
+          console.log(Data);
+          this.helper_tools.DismissLoading();
+        }
+      }, err => {
+        console.log(err);
+        this.helper_tools.DismissLoading();
+        this.helper_tools.ShowBadRequestErrorAlert();
+      })
+    }).catch(err => {
+      console.log(err);
+      this.helper_tools.DismissLoading();
+      this.helper_tools.ShowBadRequestErrorAlert();
+    })
   }
 
   onTabsChange() {
