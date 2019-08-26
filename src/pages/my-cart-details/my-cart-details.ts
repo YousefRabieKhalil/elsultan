@@ -12,12 +12,7 @@ import { ApiProvider } from "../../providers/api/api";
 import { HelperToolsProvider } from "../../providers/helper-tools/helper-tools";
 import { Storage } from "@ionic/storage";
 
-/**
- * Generated class for the MyCartDetailsPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+
 
 @IonicPage()
 @Component({
