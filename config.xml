@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="org.elsultan.com" version="0.0.18" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>السلطان العيطوي</name>
+    <name>سلطان عطيوي</name>
     <description>An awesome app for Food and restaurants.</description>
     <author email="hi@ionicframework" href="http://dopave.com/">dopave developer Team</author>
     <content src="index.html" />

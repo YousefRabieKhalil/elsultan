@@ -96,6 +96,7 @@ export class MyCartDetailsPage {
       mode: 'date',
       androidTheme: this.datePicker.ANDROID_THEMES.THEME_HOLO_DARK,
       minDate: new Date().valueOf(),
+      allowOldDates: false
     }).then(
       date => this.recive_date = date,
       err => console.log('Error occurred while getting date: ', err)
